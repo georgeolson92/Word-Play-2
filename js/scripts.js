@@ -13,26 +13,21 @@ $(function(){
 
     var sentence = $("input#sentence").val();
     var words = sentence.split(" ");
-
-      var occur = {};
+    var occur = {};
       for (var i = 0; i < words.length; i++) {
-          occur[words[i]] = (occur[words[i]] || 0) + 1;
+        occur[words[i]] = (occur[words[i]] || 0) + 1;
       }
 
-      var array_keys = new Array();
-      var array_values = new Array();
+    var array_keys = new Array();
+    var array_values = new Array();
 
-      for (var key in occur) {
-        array_keys.push(key);
-        array_values.push(occur[key]);
-      }
-
-      array_keys.forEach(function(key, value) {
-        $("ul#wordOccur").append("<li>" + key + ": " + array_values[value] + "</li>");
-      });
-
-        console.log(array_keys);
-        console.log(array_values);
-        event.preventDefault();
+    for (var key in occur) {
+      array_keys.push(key);
+      array_values.push(occur[key]);
+    }
+    array_keys.forEach(function(key, index) {
+      $("ul#wordOccur").append("<li>" + key + ": " + array_values[index] + "</li>");
+    });
+    event.preventDefault();
   });
 });
