@@ -1,5 +1,6 @@
 $(function(){
   $("form#sentence").submit(function(event) {
+    $("#wordOccur").text(" ");
     // var sentence = $("input#sentence").val();
     // var words = sentence.split(" ");
     //
@@ -28,6 +29,7 @@ $(function(){
     array_keys.forEach(function(key, index) {
       $("ul#wordOccur").append("<li>" + key + ": " + array_values[index] + "</li>");
     });
+    // $("#wordOccur").show();
     event.preventDefault();
   });
 });
